@@ -30,7 +30,7 @@ export function Hero() {
         Shape your world
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Moss lets anyone easily launch their own apps.
+        Lets anyone easily launch their own apps.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
         <Button href="/register">Try it</Button>
