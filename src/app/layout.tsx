@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'Moss - Own your dapp, shape your world',
   },
   description:
-    'own your dapp, shape your world.',
+    'lets anyone easily launch their own apps.'
 }
 
 const inter = Inter({
