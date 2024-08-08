@@ -2,12 +2,13 @@ import Image from 'next/image'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import logoLaravel from '@/images/logos/laravel.svg'
-import logoMirage from '@/images/logos/mirage.svg'
-import logoStatamic from '@/images/logos/statamic.svg'
-import logoStaticKit from '@/images/logos/statickit.svg'
-import logoTransistor from '@/images/logos/transistor.svg'
-import logoTuple from '@/images/logos/tuple.svg'
+import logoEthereum from '@/images/logos/ethereum.svg'
+import logoOptimism from '@/images/logos/optimism.svg'
+import logoPolygon from '@/images/logos/polygon.svg'
+import logoScroll from '@/images/logos/scroll.svg'
+import logoStarknet from '@/images/logos/starknet.svg'
+import logoArbitrum from '@/images/logos/arbitrum.svg'
+
 
 export function Hero() {
   return (
@@ -57,14 +58,14 @@ export function Hero() {
         >
           {[
             [
-              { name: 'Transistor', logo: logoTransistor },
-              { name: 'Tuple', logo: logoTuple },
-              { name: 'StaticKit', logo: logoStaticKit },
+              { name: 'Starknet', logo: logoStarknet},
+              { name: 'Scroll', logo: logoScroll},
+              { name: 'Ethereum', logo: logoEthereum},
             ],
             [
-              { name: 'Mirage', logo: logoMirage },
-              { name: 'Laravel', logo: logoLaravel },
-              { name: 'Statamic', logo: logoStatamic },
+              { name: 'Arbitrum', logo: logoArbitrum},
+              { name: 'Polygon', logo: logoPolygon},
+              { name: 'Optimism', logo: logoOptimism},
             ],
           ].map((group, groupIndex) => (
             <li key={groupIndex}>
