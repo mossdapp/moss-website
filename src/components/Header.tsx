@@ -97,7 +97,7 @@ export function Header() {
             </div>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
-          <Button href="https://www.mossdapp.com/" color="pink">
+          <Button href="https://www.mossdapp.com/" color="slate">
               <span>
                 Launch <span className="hidden lg:inline">Own</span> App
               </span>
