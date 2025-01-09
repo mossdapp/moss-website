@@ -63,7 +63,8 @@ export function PrimaryFeatures() {
     <section
       id="features"
       aria-label="Features for moss"
-      className="relative overflow-hidden pb-28 pt-20 sm:py-32"
+      //className="relative overflow-hidden pb-28 pt-20 sm:py-32"
+      className="relative overflow-hidden mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32"
       style={{ backgroundColor: '#e9329c' }}
     >
       <Image
