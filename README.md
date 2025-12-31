@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Moss 官网（moss-website）
 
-## Getting Started
+Next.js 15 + React 19 的 Moss 官方站点，沿用 moss-core 的粉色背景与 frosted glass 视觉，链接到 Moss App、Moss Store 与 Labs。
 
-First, run the development server:
+## 快速开始
+- 安装依赖：`npm install`
+- 本地开发：`npm run dev`（默认 3000）
+- 产物构建：`npm run build`
+- 代码检查：`npm run lint`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 结构说明
+- `src/app/layout.tsx`：页面基础框架，包含品牌字体与 favicon 链接。
+- `src/app/page.tsx`：单页内容与导航，CTA 指向 App / Store / Labs。
+- `src/app/globals.css`：品牌色、背景光斑、Material 图标与字体（复用 moss-core 公共资源）。
+- `public/`：从 moss-core 拷贝的字体与图标（Space Grotesk、Material Symbols、favicon）。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+若需调整跳转地址，可直接修改 `LINKS`（`src/app/page.tsx` 顶部）。内容文案依据 moss-core（Account OS 前端与 SDK）与 moss-store（合约与 Store）整理，可按发布节奏更新。

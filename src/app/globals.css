@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/space-grotesk-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/space-grotesk-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/space-grotesk-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/space-grotesk-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('/fonts/material-symbols-outlined.woff2') format('woff2');
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-secondary: #0A0508;
+  --glass-bg: rgba(255, 255, 255, 0.3); /* 回滚到更有质感的透明度 */
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.03),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+  
+  --background: #FCFAFB;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-brand-secondary: var(--brand-secondary);
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--brand-secondary);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  overflow-x: hidden;
 }
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* 艺术化磨砂玻璃 */
+.frosted-glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(50px) saturate(120%);
+  -webkit-backdrop-filter: blur(50px) saturate(120%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 30px 60px -15px rgba(249, 168, 212, 0.15),
+    inset 0 0 20px rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+  z-index: 10;
+}
+
+/* 流体背景 */
+.background-container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes float-dreamy {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
+  33% { transform: translate(100px, -50px) rotate(10deg); opacity: 0.6; }
+  66% { transform: translate(-50px, 80px) rotate(-5deg); opacity: 0.3; }
+  100% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
+}
+
+.background-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  animation: float-dreamy 30s infinite ease-in-out alternate;
+  mix-blend-mode: multiply;
+}
+
+.shape1 { width: 80vw; height: 80vw; background: radial-gradient(circle, #FEE7F3 0%, transparent 70%); top: -20%; left: -20%; }
+.shape2 { width: 60vw; height: 60vw; background: radial-gradient(circle, #E0E7FF 0%, transparent 70%); bottom: -10%; right: -10%; animation-delay: -8s; }
+.shape3 { width: 40vw; height: 40vw; background: radial-gradient(circle, #FBCFE8 0%, transparent 70%); top: 40%; left: 30%; animation-delay: -15s; opacity: 0.3; }
+
+/* 还原那个淡雅的描边效果 */
+.text-outline {
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+  color: transparent;
+  transition: all 0.5s ease;
+}
+
+.text-outline:hover {
+  -webkit-text-stroke: 0px;
+  color: var(--brand-secondary);
+}
+
+::-webkit-scrollbar { width: 0px; background: transparent; }
