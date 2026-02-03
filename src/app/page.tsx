@@ -2,8 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 const LINKS = {
-  app: "https://app.mossdapp.com",
+  os: "https://os.mossdapp.com",
   store: "https://store.mossdapp.com",
+  docs: "https://docs.mossdapp.com",
   labs: "https://labs.mossdapp.com",
   sdk: "https://www.npmjs.com/package/@mossdapp/sdk",
 };
@@ -34,9 +35,9 @@ export default function Home() {
         </div>
         
         <div className="pointer-events-auto hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#1B0D15]">
-          <a href="#store" className="hover:text-indigo-600 transition-colors">STORE</a>
-          <a href="#core" className="hover:text-indigo-600 transition-colors">CORE</a>
-          <a href="#labs" className="hover:text-indigo-600 transition-colors">LABS</a>
+          <a href={LINKS.store} className="hover:text-indigo-600 transition-colors">STORE</a>
+          <a href={LINKS.docs} className="hover:text-indigo-600 transition-colors">DOCS</a>
+          <a href={LINKS.labs} className="hover:text-indigo-600 transition-colors">LABS</a>
         </div>
       </nav>
 
@@ -58,17 +59,16 @@ export default function Home() {
 
             {/* 右侧浮动的 OS 定义 - 此处增加颜色点缀 */}
             <div className="absolute top-[5%] right-0 max-w-[180px] sm:max-w-xs text-right hidden lg:block">
-              <span className="block text-xs font-bold uppercase tracking-widest text-pink-600 mb-2">Web3 Operating System</span>
-              <p className="text-lg leading-tight font-medium text-[#1B0D15]/80">
-                The intersection of <br/>
-                <strong>Core</strong> infrastructure & <br/>
-                <strong>Store</strong> capabilities.
-              </p>
+              <span className="block text-xs font-bold uppercase tracking-widest text-pink-600">
+                WEB3 OPERATING SYSTEM
+                <br />
+                & DAPP STORE
+              </span>
             </div>
             
             {/* 圆形 CTA - 保持之前好评的粉色阴影，但去除内部复杂渐变 */}
             <a 
-              href={LINKS.app}
+              href={LINKS.os}
               target="_blank" 
               rel="noreferrer"
               className="absolute right-[5%] top-[65%] sm:top-auto sm:bottom-[10%] w-28 h-28 sm:w-48 sm:h-48 rounded-full bg-[#1B0D15] text-white flex items-center justify-center text-center p-4 
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 sm:mt-8 sm:pl-4">
-            <p className="text-sm font-mono opacity-60 tracking-tight">Supports EVM Chains. Any EOA Account.</p>
+            <p className="text-sm font-mono opacity-60 tracking-tight">Supports EVM Chains. Any EOA Account</p>
           </div>
         </section>
 
@@ -101,11 +101,10 @@ export default function Home() {
                     </div>
                     <div>
                        <span className="block text-xs font-mono uppercase tracking-widest opacity-40">Ecosystem</span>
-                       <span className="font-medium text-sm text-[#1B0D15]/70">App Store</span>
+                       <span className="font-medium text-sm text-[#1B0D15]/70">Moss Store</span>
                     </div>
                  </div>
                  
-                 <h2 className="text-4xl font-light tracking-tight mb-4 text-[#1B0D15]">Moss Store</h2>
                  <p className="text-3xl font-medium text-[#1B0D15] tracking-tight leading-tight mb-8">
                    Your Dapp. Your NFT.
                  </p>
@@ -140,17 +139,25 @@ export default function Home() {
                     </div>
                     <div>
                        <span className="block text-xs font-mono uppercase tracking-widest opacity-40">Infrastructure</span>
-                       <span className="font-medium text-sm text-[#1B0D15]/70">Core Kernel</span>
+                       <span className="font-medium text-sm text-[#1B0D15]/70">Account OS</span>
                     </div>
                  </div>
                  
-                 <h2 className="text-4xl font-light tracking-tight mb-4 text-[#1B0D15]">Account OS</h2>
                  <p className="text-3xl font-medium text-[#1B0D15] tracking-tight leading-tight opacity-80">
                    Your Account. Your OS. Your World.
                  </p>
                </div>
                
                <div className="mt-auto w-full h-px bg-gradient-to-r from-indigo-900/10 to-transparent"></div>
+               <a
+                 href={LINKS.os}
+                 target="_blank"
+                 rel="noreferrer"
+                 className="mt-6 inline-flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+               >
+                 <Image src="/moss-icon.svg" alt="Moss" width={20} height={20} />
+                 <span className="text-sm font-medium text-[#1B0D15]">moss</span>
+               </a>
             </div>
 
             {/* 3. DEVELOPERS (8列) - 保持深色高级感 */}
@@ -185,7 +192,7 @@ export default function Home() {
                <div className="relative z-10 mt-4">
                  <h3 className="text-3xl font-light tracking-tight mb-1 text-[#1B0D15]">Labs</h3>
                  <p className="text-sm opacity-60 font-medium text-[#1B0D15]/80 leading-tight font-mono">
-                   ERC-7579 & 7204 <br/>Standards
+                   Redefine Web3
                  </p>
                </div>
             </a>
@@ -197,12 +204,11 @@ export default function Home() {
         <footer className="mt-32 px-10 border-t border-black/5 pt-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 opacity-60">
            <div>
               <p className="font-bold tracking-tight text-lg text-[#1B0D15]">moss</p>
-              <p className="text-xs mt-1">© 2025 Account OS</p>
+              <p className="text-xs mt-1">© 2026 MOSSDAPP</p>
            </div>
            <div className="flex gap-6 text-sm font-medium text-[#1B0D15]">
               <a href="https://github.com/mossdapp" className="hover:text-black transition-colors">GitHub</a>
-              <a href="https://twitter.com" className="hover:text-black transition-colors">Twitter</a>
-              <a href="mailto:hello@mossdapp.com" className="hover:text-black transition-colors">Contact</a>
+              <a href="https://x.com/moss_dapp" className="hover:text-black transition-colors">Twitter</a>
            </div>
         </footer>
 

@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Moss | Account OS 官网",
-  description: "Moss Account OS 官网，了解智能账户体系、生态应用和 Labs 动向。",
+  title: "Moss | Account OS",
+  description: "Moss Account OS, covering core infrastructure, apps, and Labs.",
 };
 
 export const viewport: Viewport = {
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="en">
       <head>
         <link rel="preload" href="/fonts/space-grotesk-400.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/space-grotesk-500.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
