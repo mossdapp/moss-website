@@ -41,7 +41,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="relative z-10 w-full pb-32">
+      <main className="relative z-10 w-full pb-12">
         
         {/* HERO SECTION */}
         <section className="min-h-screen flex flex-col justify-center px-4 sm:px-10 pt-10 sm:pt-20">
@@ -201,7 +201,7 @@ export default function Home() {
         </section>
 
         {/* FOOTER */}
-        <footer className="mt-20 px-10 border-t border-black/5 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 opacity-60">
+        <footer className="mt-10 px-6 sm:px-10 border-t border-black/5 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 opacity-60">
            <div>
               <p className="font-bold tracking-tight text-lg text-[#1B0D15]">moss</p>
               <p className="text-xs mt-1">© {new Date().getFullYear()} MOSSDAPP. All rights reserved.</p>
