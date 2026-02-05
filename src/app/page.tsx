@@ -84,7 +84,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 sm:mt-8 sm:pl-4">
-            <p className="text-sm font-mono opacity-60 tracking-tight">Supports EVM Chains. Any EOA Account</p>
+            <p className="text-sm font-mono opacity-60 tracking-tight">Universal EVM support. Compatible with any account</p>
           </div>
         </section>
 
