@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       {/* 顶部导航 */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-10 py-8 pointer-events-none mix-blend-darken">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-10 py-4 sm:py-5 pointer-events-none mix-blend-darken">
         <div className="pointer-events-auto flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
           <Image src="/moss-icon.svg" alt="Moss" width={28} height={28} className="shrink-0" />
           <span className="font-bold tracking-tight text-xl">moss</span>
@@ -201,10 +201,10 @@ export default function Home() {
         </section>
 
         {/* FOOTER */}
-        <footer className="mt-32 px-10 border-t border-black/5 pt-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 opacity-60">
+        <footer className="mt-20 px-10 border-t border-black/5 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 opacity-60">
            <div>
               <p className="font-bold tracking-tight text-lg text-[#1B0D15]">moss</p>
-              <p className="text-xs mt-1">© 2026 MOSSDAPP</p>
+              <p className="text-xs mt-1">© {new Date().getFullYear()} MOSSDAPP. All rights reserved.</p>
            </div>
            <div className="flex gap-6 text-sm font-medium text-[#1B0D15]">
               <a href="https://github.com/mossdapp" className="hover:text-black transition-colors">GitHub</a>
