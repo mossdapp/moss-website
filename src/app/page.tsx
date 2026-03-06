@@ -3,10 +3,20 @@ import Image from "next/image";
 
 const LINKS = {
   os: "https://os.mossdapp.com",
+  osFaucet: "https://os.mossdapp.com/faucet",
+  osRedPacket: "https://os.mossdapp.com/redpacket",
+  osPeerDex: "https://os.mossdapp.com/peerdex",
+  peerdexStandalone: "https://peerdex.vercel.app",
   store: "https://store.mossdapp.com",
+  storeApps: "https://store.mossdapp.com/en/apps",
+  storePeerDex: "https://store.mossdapp.com/en/apps/peerdex",
+  chineseGuide: "/guide/zh",
   docs: "https://docs.mossdapp.com",
   labs: "https://labs.mossdapp.com",
   sdk: "https://www.npmjs.com/package/@mossdapp/sdk",
+  sepoliaFaucet: "https://sepoliafaucet.com/",
+  faucetUsdcCode: "https://sepolia.etherscan.io/address/0x9d4b951592c31dc042efDC4E1F8aE00718b96fe1#code",
+  faucetUsdtCode: "https://sepolia.etherscan.io/address/0xdd7468f993c52fcF43Cef80c9a4e042de4920F2d#code",
 };
 
 const APPS = [
@@ -16,6 +26,69 @@ const APPS = [
   { name: "CryptoWill", icon: "/apps/cryptowill.svg" },
   { name: "BlinkPay", icon: "/apps/blinkpay.svg" },
 ];
+
+const BEGINNER_STEPS = [
+  {
+    id: "01",
+    icon: "account_balance_wallet",
+    title: "Connect and Create Moss Wallet",
+    desc: 'Use any EOA wallet to connect, then click "Create Moss Wallet". Your Moss Wallet is your OS account.',
+    links: [{ label: "Open OS", href: LINKS.os }],
+  },
+  {
+    id: "02",
+    icon: "local_gas_station",
+    title: "Fund Gas and Claim Test Assets",
+    desc: "Fund your Moss Wallet with Sepolia ETH, then claim USDC/USDT/MOSS + NFT assets in Moss Faucet.",
+    links: [
+      { label: "Sepolia Faucet", href: LINKS.sepoliaFaucet },
+      { label: "Moss Faucet", href: LINKS.osFaucet },
+    ],
+  },
+  {
+    id: "03",
+    icon: "token",
+    title: "Mint PeerDex App NFT in Store",
+    desc: "In Store, mint PeerDex App NFT so it can appear and run in your OS workspace.",
+    links: [
+      { label: "Open Store", href: LINKS.storeApps },
+      { label: "Mint PeerDex", href: LINKS.storePeerDex },
+    ],
+  },
+  {
+    id: "04",
+    icon: "rocket_launch",
+    title: "System vs App NFT vs Standalone",
+    desc: "Red Packet is ready in OS. Wallet PeerDex needs App NFT mint. PeerDex Standalone is separate.",
+    links: [
+      { label: "Red Packet (System APP)", href: LINKS.osRedPacket },
+      { label: "Wallet PeerDex (App NFT)", href: LINKS.osPeerDex },
+      { label: "PeerDex Standalone", href: LINKS.peerdexStandalone },
+    ],
+  },
+] as const;
+
+const STEP_ACCENTS = [
+  "from-pink-100 to-rose-100",
+  "from-amber-100 to-orange-100",
+  "from-sky-100 to-cyan-100",
+  "from-indigo-100 to-violet-100",
+] as const;
+
+const TROUBLESHOOTING = [
+  {
+    q: "Cannot see Create Moss Wallet",
+    a: "Reconnect with Moss connector and make sure your network is Sepolia.",
+  },
+  {
+    q: "Faucet or Mint failed",
+    a: "Check gas balance first. This flow runs on Ethereum Sepolia testnet.",
+  },
+  {
+    q: "PeerDex not visible after mint",
+    a: "Wait for confirmation and refresh OS after 10-30 seconds.",
+  },
+] as const;
 
 export default function Home() {
   return (
@@ -197,6 +270,142 @@ export default function Home() {
                </div>
             </a>
 
+          </div>
+        </section>
+
+        {/* BEGINNER GUIDE */}
+        <section id="beginner-guide" className="px-4 sm:px-10 mt-8">
+          <div className="frosted-glass rounded-[3rem] p-6 sm:p-10 relative overflow-hidden bg-[linear-gradient(180deg,rgba(255,255,255,0.62),rgba(255,255,255,0.35))]">
+            <div className="absolute -top-16 -right-20 w-60 h-60 rounded-full bg-gradient-to-br from-pink-200/40 to-indigo-200/40 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-12 w-64 h-64 rounded-full bg-gradient-to-br from-emerald-200/25 to-cyan-200/20 blur-3xl pointer-events-none" />
+            <div className="absolute inset-0 opacity-20 pointer-events-none [background-image:radial-gradient(circle_at_1px_1px,rgba(27,13,21,0.18)_1px,transparent_0)] [background-size:18px_18px]" />
+
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+                <div>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-mono tracking-widest uppercase bg-white/60 border border-white/60 text-[#1B0D15]/70">
+                    Quick Start
+                  </span>
+                  <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[#1B0D15]">
+                    Moss Onboarding Tutorial
+                  </h2>
+                  <p className="mt-2 text-sm text-[#1B0D15]/65 max-w-3xl">
+                    Start from any EOA wallet, create your Moss Wallet (which is your OS account), then complete the app flow.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  <a
+                    href={LINKS.os}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 rounded-full bg-[#1B0D15] text-white text-sm font-medium hover:opacity-90 transition-opacity"
+                  >
+                    Open OS
+                  </a>
+                  <a
+                    href={LINKS.store}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 rounded-full bg-white/70 border border-white/70 text-[#1B0D15] text-sm font-medium hover:bg-white transition-colors"
+                  >
+                    Open Store
+                  </a>
+                  <a
+                    href={LINKS.chineseGuide}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-4 py-2 rounded-full bg-white/70 border border-white/70 text-[#1B0D15] text-sm font-medium hover:bg-white transition-colors"
+                  >
+                    Chinese Guide
+                  </a>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <div className="lg:col-span-8 bg-white/45 rounded-[2rem] border border-white/60 p-5 sm:p-7">
+                  <div className="relative">
+                    <div className="absolute left-[1.4rem] top-0 bottom-0 w-px bg-gradient-to-b from-[#1B0D15]/25 via-[#1B0D15]/10 to-transparent" />
+                    <div className="space-y-7">
+                      {BEGINNER_STEPS.map((step, index) => (
+                        <article key={step.id} className="relative pl-14">
+                          <span className="absolute left-0 top-2 w-11 h-11 rounded-2xl bg-[#1B0D15] text-white flex items-center justify-center shadow-lg shadow-black/20">
+                            <span className="material-symbols-outlined !text-[18px]">{step.icon}</span>
+                          </span>
+                          <div className="group rounded-2xl bg-white/75 border border-white/80 px-4 py-4 sm:px-5 sm:py-5 shadow-[0_14px_34px_-22px_rgba(17,12,34,0.45)] transition-all duration-300 hover:-translate-y-1 hover:bg-white">
+                            <div className="flex items-center justify-between gap-3">
+                              <h3 className="text-base sm:text-lg font-semibold text-[#1B0D15]">
+                                {step.title}
+                              </h3>
+                              <span className={`inline-flex shrink-0 px-2.5 py-1 rounded-full text-[11px] font-bold bg-gradient-to-r ${STEP_ACCENTS[index]} text-[#1B0D15]/75`}>
+                                STEP {step.id}
+                              </span>
+                            </div>
+                            <p className="mt-2 text-sm text-[#1B0D15]/75 leading-relaxed">
+                              {step.desc}
+                            </p>
+                            <div className="mt-3 flex flex-wrap gap-2">
+                              {step.links.map((link) => (
+                                <a
+                                  key={`${step.id}-${link.label}`}
+                                  href={link.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/80 border border-white/90 text-xs font-medium text-[#1B0D15] hover:bg-[#1B0D15] hover:text-white transition-colors"
+                                >
+                                  {link.label}
+                                  <span className="material-symbols-outlined !text-sm">open_in_new</span>
+                                </a>
+                              ))}
+                            </div>
+                          </div>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-4 space-y-4">
+                  <div className="bg-[linear-gradient(145deg,#120a0f,#22131c)] text-white rounded-[2rem] p-5 sm:p-6 border border-white/10 shadow-[0_30px_60px_-35px_rgba(0,0,0,0.6)]">
+                    <h3 className="text-base font-semibold">App Types: System / App NFT / Standalone Platform</h3>
+                    <p className="mt-1 text-xs text-white/70">Runs on Ethereum Sepolia testnet. System and App NFT run in OS; Standalone is separate.</p>
+
+                    <div className="mt-4 space-y-3">
+                      <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
+                        <p className="text-xs uppercase tracking-widest text-white/60">System App</p>
+                        <p className="mt-1 text-sm font-medium">Red Packet (OS)</p>
+                        <p className="mt-1 text-xs text-white/70">Available by default inside OS, no mint required.</p>
+                      </div>
+                      <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
+                        <p className="text-xs uppercase tracking-widest text-white/60">App NFT</p>
+                        <p className="mt-1 text-sm font-medium">PeerDex (OS App)</p>
+                        <p className="mt-1 text-xs text-white/70">Mint in Store first, then it appears inside OS.</p>
+                      </div>
+                      <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
+                        <p className="text-xs uppercase tracking-widest text-white/60">Standalone Platform</p>
+                        <p className="mt-1 text-sm font-medium">PeerDex Standalone Trading Platform</p>
+                        <p className="mt-1 text-xs text-white/70">Separate from wallet-embedded OS apps.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-white/80 to-white/55 rounded-[2rem] border border-white/70 p-5 sm:p-6 shadow-[0_15px_35px_-24px_rgba(30,27,75,0.5)]">
+                    <h3 className="text-base font-semibold text-[#1B0D15]">Troubleshooting</h3>
+                    <div className="mt-3 space-y-2">
+                      {TROUBLESHOOTING.map((item) => (
+                        <details key={item.q} className="group rounded-xl bg-white/75 border border-white/80 px-3 py-2">
+                          <summary className="cursor-pointer text-sm font-medium text-[#1B0D15] list-none flex items-center justify-between gap-2">
+                            <span>{item.q}</span>
+                            <span className="material-symbols-outlined !text-base text-[#1B0D15]/50 group-open:rotate-45 transition-transform">add</span>
+                          </summary>
+                          <p className="mt-2 text-xs text-[#1B0D15]/75">{item.a}</p>
+                        </details>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
