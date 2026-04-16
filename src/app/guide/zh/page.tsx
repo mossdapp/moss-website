@@ -2,13 +2,13 @@ import React from "react";
 
 const LINKS = {
   home: "/",
-  os: "https://os.mossdapp.com",
+  app: "https://1do.app/app",
   peerdexStandalone: "https://peerdex.vercel.app",
-  store: "https://store.mossdapp.com/en/apps",
-  storePeerDex: "https://store.mossdapp.com/en/apps/peerdex",
-  osFaucet: "https://os.mossdapp.com/faucet",
-  osRedPacket: "https://os.mossdapp.com/redpacket",
-  osPeerDex: "https://os.mossdapp.com/peerdex",
+  store: "https://store.1do.app/en/apps",
+  storePeerDex: "https://store.1do.app/en/apps/peerdex",
+  appFaucet: "https://1do.app/app/faucet",
+  appRedPacket: "https://1do.app/app/redpacket",
+  appPeerDex: "https://1do.app/app/peerdex",
   sepoliaFaucet: "https://sepoliafaucet.com/",
   faucetUsdcCode: "https://sepolia.etherscan.io/address/0x9d4b951592c31dc042efDC4E1F8aE00718b96fe1#code",
   faucetUsdtCode: "https://sepolia.etherscan.io/address/0xdd7468f993c52fcF43Cef80c9a4e042de4920F2d#code",
@@ -18,25 +18,25 @@ const STEPS = [
   {
     id: "01",
     icon: "account_balance_wallet",
-    title: "连接钱包并创建 Moss 钱包",
-    desc: '使用任意 EOA 钱包连接 OS，点击 "Create Moss Wallet" 完成创建。Moss 钱包就是你的 OS 账户。',
-    links: [{ label: "打开 OS", href: LINKS.os }],
+    title: "连接钱包并启用 1do runtime",
+    desc: "使用任意 EOA 钱包进入 1do；如果当前地址还没启用 7702，就先完成 1do runtime 激活。之后这个地址就能直接作为你的账户运行环境。",
+    links: [{ label: "打开 1do", href: LINKS.app }],
   },
   {
     id: "02",
     icon: "local_gas_station",
     title: "准备 Gas 并领取测试资产",
-    desc: "先向 Moss 钱包转入 Sepolia 测试 ETH（gas），再到 Moss Faucet 领取测试 USDC / USDT / MOSS + NFT。",
+    desc: "先向 1do 钱包转入 Sepolia 测试 ETH（gas），再到 1do Faucet 领取测试 USDC / USDT / 1DO + NFT。",
     links: [
       { label: "Sepolia Faucet", href: LINKS.sepoliaFaucet },
-      { label: "Moss Faucet", href: LINKS.osFaucet },
+      { label: "1do Faucet", href: LINKS.appFaucet },
     ],
   },
   {
     id: "03",
     icon: "token",
     title: "在 Store mint PeerDex App NFT",
-    desc: "在 Store 中 mint PeerDex App NFT，完成后 PeerDex 才会在 OS 中出现并可用。",
+    desc: "在 Store 中 mint PeerDex App NFT，完成后 PeerDex 才会在你的 1do 钱包中出现并可用。",
     links: [
       { label: "打开 Store", href: LINKS.store },
       { label: "Mint PeerDex", href: LINKS.storePeerDex },
@@ -48,8 +48,8 @@ const STEPS = [
     title: "System / App NFT / 独立平台",
     desc: "Red Packet（System）默认可用；钱包内 PeerDex（App NFT）需先 mint；PeerDex 独立平台是分离产品。",
     links: [
-      { label: "Red Packet（System APP）", href: LINKS.osRedPacket },
-      { label: "钱包内 PeerDex（App NFT）", href: LINKS.osPeerDex },
+      { label: "Red Packet（System APP）", href: LINKS.appRedPacket },
+      { label: "钱包内 PeerDex（App NFT）", href: LINKS.appPeerDex },
       { label: "PeerDex 独立平台", href: LINKS.peerdexStandalone },
     ],
   },
@@ -57,8 +57,8 @@ const STEPS = [
 
 const FAQ = [
   {
-    q: "看不到 Create Moss Wallet 按钮",
-    a: "确认使用的是 Moss connector，并且当前网络是 Sepolia（11155111）。可以断开后重新连接。",
+    q: "看不到 7702 激活入口",
+    a: "确认当前网络是 Sepolia（11155111），并重新连接钱包后再试。激活入口只会在尚未启用 1do runtime 的地址上出现。",
   },
   {
     q: "Faucet 或 Mint 失败",
@@ -66,7 +66,7 @@ const FAQ = [
   },
   {
     q: "Mint 之后 PeerDex 还没显示",
-    a: "等待链上确认和前端轮询同步（通常 10-30 秒），然后刷新 OS 页面。",
+    a: "等待链上确认和前端轮询同步（通常 10-30 秒），然后刷新 1do 页面。",
   },
 ] as const;
 
@@ -101,19 +101,19 @@ export default function ChineseGuidePage() {
               Chinese Guide
             </span>
             <h1 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[#1B0D15]">
-              Moss 官网中文指导
+              1do 官网中文指导
             </h1>
             <p className="mt-2 text-sm text-[#1B0D15]/65">
-              官网路径：`/guide/zh`。从创建 Moss 钱包到 Store mint PeerDex，再到应用使用，按步骤完成即可。
+              官网路径：`/guide/zh`。从连接钱包、启用 1do runtime，到 Store mint PeerDex，再到打开运行在账户内的应用，按步骤完成即可。
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               <a
-                href={LINKS.os}
+                href={LINKS.app}
                 target="_blank"
                 rel="noreferrer"
                 className="px-4 py-2 rounded-full bg-[#1B0D15] text-white text-sm font-medium hover:opacity-90 transition-opacity"
               >
-                打开 OS
+                打开 1do
               </a>
               <a
                 href={LINKS.store}
@@ -168,22 +168,22 @@ export default function ChineseGuidePage() {
             <div className="lg:col-span-4 space-y-6">
               <div className="bg-[linear-gradient(145deg,#120a0f,#22131c)] text-white rounded-[2rem] p-5 sm:p-6 border border-white/10 shadow-[0_30px_60px_-35px_rgba(0,0,0,0.6)]">
                 <h3 className="text-base font-semibold">应用类型：System / App NFT / 独立交易平台</h3>
-                <p className="mt-1 text-xs text-white/70">运行在以太坊 Sepolia 测试网。System / App NFT 在 OS 内运行，独立平台为外部产品。</p>
+                <p className="mt-1 text-xs text-white/70">运行在以太坊 Sepolia 测试网。System / App NFT 在 1do 钱包内运行，独立平台为外部产品。</p>
                 <div className="mt-4 space-y-3">
                   <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                     <p className="text-xs uppercase tracking-widest text-white/60">System App</p>
-                    <p className="mt-1 text-sm font-medium">Red Packet（OS 内）</p>
-                    <p className="mt-1 text-xs text-white/70">默认可用，属于 OS 内置路径，无需先 mint。</p>
+                    <p className="mt-1 text-sm font-medium">Red Packet</p>
+                    <p className="mt-1 text-xs text-white/70">默认可用，属于 1do 钱包内置路径，无需先 mint。</p>
                   </div>
                   <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                     <p className="text-xs uppercase tracking-widest text-white/60">App NFT</p>
-                    <p className="mt-1 text-sm font-medium">PeerDex（OS App）</p>
-                    <p className="mt-1 text-xs text-white/70">需先在 Store mint，随后在 OS 内可用。</p>
+                    <p className="mt-1 text-sm font-medium">PeerDex</p>
+                    <p className="mt-1 text-xs text-white/70">需先在 Store mint，随后在你的 1do 钱包中可用。</p>
                   </div>
                   <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                     <p className="text-xs uppercase tracking-widest text-white/60">Standalone Platform</p>
                     <p className="mt-1 text-sm font-medium">PeerDex 独立交易平台</p>
-                    <p className="mt-1 text-xs text-white/70">独立于 OS 钱包内应用路径。</p>
+                    <p className="mt-1 text-xs text-white/70">独立于 1do 钱包内应用路径。</p>
                   </div>
                 </div>
               </div>

@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Moss | Account OS",
-  description: "Moss Account OS, covering core infrastructure, apps, and Labs.",
+  title: "1do | App Platform for Smart Wallets",
+  description: "1do is an app platform for smart wallets, built on a smart account runtime.",
 };
 
 export const viewport: Viewport = {

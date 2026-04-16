@@ -2,18 +2,18 @@ import React from "react";
 import Image from "next/image";
 
 const LINKS = {
-  os: "https://os.mossdapp.com",
-  osFaucet: "https://os.mossdapp.com/faucet",
-  osRedPacket: "https://os.mossdapp.com/redpacket",
-  osPeerDex: "https://os.mossdapp.com/peerdex",
+  app: "https://1do.app/app",
+  appFaucet: "https://1do.app/app/faucet",
+  appRedPacket: "https://1do.app/app/redpacket",
+  appPeerDex: "https://1do.app/app/peerdex",
   peerdexStandalone: "https://peerdex.vercel.app",
-  store: "https://store.mossdapp.com",
-  storeApps: "https://store.mossdapp.com/en/apps",
-  storePeerDex: "https://store.mossdapp.com/en/apps/peerdex",
+  store: "https://store.1do.app",
+  storeApps: "https://store.1do.app/en/apps",
+  storePeerDex: "https://store.1do.app/en/apps/peerdex",
   chineseGuide: "/guide/zh",
-  docs: "https://docs.mossdapp.com",
-  labs: "https://labs.mossdapp.com",
-  sdk: "https://www.npmjs.com/package/@mossdapp/sdk",
+  docs: "https://docs.1do.app",
+  labs: "https://labs.1do.app",
+  sdk: "https://www.npmjs.com/package/@1doapp/sdk",
   sepoliaFaucet: "https://sepoliafaucet.com/",
   faucetUsdcCode: "https://sepolia.etherscan.io/address/0x9d4b951592c31dc042efDC4E1F8aE00718b96fe1#code",
   faucetUsdtCode: "https://sepolia.etherscan.io/address/0xdd7468f993c52fcF43Cef80c9a4e042de4920F2d#code",
@@ -31,25 +31,25 @@ const BEGINNER_STEPS = [
   {
     id: "01",
     icon: "account_balance_wallet",
-    title: "Connect and Create Moss Wallet",
-    desc: 'Use any EOA wallet to connect, then click "Create Moss Wallet". Your Moss Wallet is your OS account.',
-    links: [{ label: "Open OS", href: LINKS.os }],
+    title: "Connect your wallet",
+    desc: "Use any EOA wallet to enter 1do. If your address has not activated 7702 yet, enable the 1do runtime first.",
+    links: [{ label: "Open 1do", href: LINKS.app }],
   },
   {
     id: "02",
     icon: "local_gas_station",
     title: "Fund Gas and Claim Test Assets",
-    desc: "Fund your Moss Wallet with Sepolia ETH, then claim USDC/USDT/MOSS + NFT assets in Moss Faucet.",
+    desc: "Fund your 1do wallet with Sepolia ETH, then claim USDC/USDT/1DO + NFT assets in 1do Faucet.",
     links: [
       { label: "Sepolia Faucet", href: LINKS.sepoliaFaucet },
-      { label: "Moss Faucet", href: LINKS.osFaucet },
+      { label: "1do Faucet", href: LINKS.appFaucet },
     ],
   },
   {
     id: "03",
     icon: "token",
     title: "Mint PeerDex App NFT in Store",
-    desc: "In Store, mint PeerDex App NFT so it can appear and run in your OS workspace.",
+    desc: "In Store, mint PeerDex App NFT so it can appear and run in your account workspace.",
     links: [
       { label: "Open Store", href: LINKS.storeApps },
       { label: "Mint PeerDex", href: LINKS.storePeerDex },
@@ -59,10 +59,10 @@ const BEGINNER_STEPS = [
     id: "04",
     icon: "rocket_launch",
     title: "System vs App NFT vs Standalone",
-    desc: "Red Packet is ready in OS. Wallet PeerDex needs App NFT mint. PeerDex Standalone is separate.",
+    desc: "Red Packet is ready in 1do. Wallet PeerDex needs App NFT mint. PeerDex Standalone is separate.",
     links: [
-      { label: "Red Packet (System APP)", href: LINKS.osRedPacket },
-      { label: "Wallet PeerDex (App NFT)", href: LINKS.osPeerDex },
+      { label: "Red Packet (System APP)", href: LINKS.appRedPacket },
+      { label: "Wallet PeerDex (App NFT)", href: LINKS.appPeerDex },
       { label: "PeerDex Standalone", href: LINKS.peerdexStandalone },
     ],
   },
@@ -77,8 +77,8 @@ const STEP_ACCENTS = [
 
 const TROUBLESHOOTING = [
   {
-    q: "Cannot see Create Moss Wallet",
-    a: "Reconnect with Moss connector and make sure your network is Sepolia.",
+    q: "7702 activation is not available",
+    a: "Reconnect your wallet and make sure your network is Sepolia before enabling the 1do runtime.",
   },
   {
     q: "Faucet or Mint failed",
@@ -86,7 +86,7 @@ const TROUBLESHOOTING = [
   },
   {
     q: "PeerDex not visible after mint",
-    a: "Wait for confirmation and refresh OS after 10-30 seconds.",
+    a: "Wait for confirmation and refresh 1do after 10-30 seconds.",
   },
 ] as const;
 
@@ -103,8 +103,8 @@ export default function Home() {
       {/* 顶部导航 */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-10 py-4 sm:py-5 pointer-events-none mix-blend-darken">
         <div className="pointer-events-auto flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-          <Image src="/moss-icon.svg" alt="Moss" width={28} height={28} className="shrink-0" />
-          <span className="font-bold tracking-tight text-xl">moss</span>
+          <Image src="/onedo-icon.svg" alt="1do" width={28} height={28} className="shrink-0" />
+          <span className="font-bold tracking-tight text-xl">1do</span>
         </div>
         
         <div className="pointer-events-auto hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#1B0D15]">
@@ -120,20 +120,20 @@ export default function Home() {
         <section className="min-h-screen flex flex-col justify-center px-4 sm:px-10 pt-10 sm:pt-20">
           
           <div className="relative flex flex-col items-start">
-            {/* 行 1: MOSS - 还原纯色高级感 */}
+            {/* 行 1: 1DO - 还原纯色高级感 */}
             <h1 className="text-[26vw] leading-[0.75] font-bold tracking-tighter text-[#1B0D15] mix-blend-overlay opacity-90 select-none ml-[-1vw]">
-              MOSS
+              1DO
             </h1>
             
-            {/* 行 2: ACCOUNT OS */}
+            {/* 行 2: SMART ACCOUNT */}
             <h1 className="text-[11vw] sm:text-[12vw] leading-[0.9] font-bold tracking-tighter text-outline hover:text-[#1B0D15] cursor-default select-none transition-colors duration-700 mt-2 sm:mt-0">
-              ACCOUNT OS
+              SMART ACCOUNT
             </h1>
 
-            {/* 右侧浮动的 OS 定义 - 此处增加颜色点缀 */}
+            {/* 右侧浮动的 Runtime 定义 - 此处增加颜色点缀 */}
             <div className="absolute top-[5%] right-0 max-w-[180px] sm:max-w-xs text-right hidden lg:block">
               <span className="block text-xs font-bold uppercase tracking-widest text-pink-600">
-                WEB3 OPERATING SYSTEM
+                WEB3 ACCOUNT RUNTIME
                 <br />
                 & DAPP STORE
               </span>
@@ -141,7 +141,7 @@ export default function Home() {
             
             {/* 圆形 CTA - 保持之前好评的粉色阴影，但去除内部复杂渐变 */}
             <a 
-              href={LINKS.os}
+              href={LINKS.app}
               target="_blank" 
               rel="noreferrer"
               className="absolute right-[5%] top-[65%] sm:top-auto sm:bottom-[10%] w-28 h-28 sm:w-48 sm:h-48 rounded-full bg-[#1B0D15] text-white flex items-center justify-center text-center p-4 
@@ -149,7 +149,7 @@ export default function Home() {
             >
               <div className="relative z-10 flex flex-col items-center">
                 <span className="text-xs sm:text-lg font-medium opacity-80">Launch</span>
-                <span className="text-lg sm:text-3xl font-bold italic">OS</span>
+                <span className="text-lg sm:text-3xl font-bold italic">Runtime</span>
                 <span className="material-symbols-outlined mt-1 text-base sm:text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </div>
               <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
@@ -165,7 +165,7 @@ export default function Home() {
         <section className="px-4 sm:px-10 mt-10">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-min">
             
-            {/* 1. MOSS STORE (7列) */}
+            {/* 1. 1DO STORE (7列) */}
             <div id="store" className="md:col-span-7 frosted-glass rounded-[3rem] p-8 sm:p-12 min-h-[420px] flex flex-col group relative overflow-hidden card-hover-effect">
                <div className="relative z-10 flex-1 flex flex-col">
                  <div className="flex items-center gap-4 mb-8">
@@ -174,7 +174,7 @@ export default function Home() {
                     </div>
                     <div>
                        <span className="block text-xs font-mono uppercase tracking-widest opacity-40">Ecosystem</span>
-                       <span className="font-medium text-sm text-[#1B0D15]/70">Moss Store</span>
+                       <span className="font-medium text-sm text-[#1B0D15]/70">1do Store</span>
                     </div>
                  </div>
                  
@@ -203,7 +203,7 @@ export default function Home() {
                </div>
             </div>
 
-            {/* 2. CORE / ACCOUNT OS (5列) */}
+            {/* 2. CORE / SMART ACCOUNT (5列) */}
             <div id="core" className="md:col-span-5 frosted-glass rounded-[3rem] p-8 sm:p-12 min-h-[420px] flex flex-col group relative overflow-hidden card-hover-effect">
                <div className="relative z-10 flex-1 flex flex-col">
                  <div className="flex items-center gap-4 mb-8">
@@ -212,24 +212,24 @@ export default function Home() {
                     </div>
                     <div>
                        <span className="block text-xs font-mono uppercase tracking-widest opacity-40">Infrastructure</span>
-                       <span className="font-medium text-sm text-[#1B0D15]/70">Account OS</span>
+                       <span className="font-medium text-sm text-[#1B0D15]/70">1do Account</span>
                     </div>
                  </div>
                  
                  <p className="text-3xl font-medium text-[#1B0D15] tracking-tight leading-tight opacity-80">
-                   Your Account. Your OS. Your World.
+                   Your Account. Your Apps. Your World.
                  </p>
                </div>
                
                <div className="mt-auto w-full h-px bg-gradient-to-r from-indigo-900/10 to-transparent"></div>
                <a
-                 href={LINKS.os}
+                 href={LINKS.app}
                  target="_blank"
                  rel="noreferrer"
                  className="mt-6 inline-flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                >
-                 <Image src="/moss-icon.svg" alt="Moss" width={20} height={20} />
-                 <span className="text-sm font-medium text-[#1B0D15]">moss</span>
+                 <Image src="/onedo-icon.svg" alt="1do" width={20} height={20} />
+                 <span className="text-sm font-medium text-[#1B0D15]">1do</span>
                </a>
             </div>
 
@@ -240,7 +240,7 @@ export default function Home() {
                      <div className="p-1.5 bg-white/10 rounded-lg">
                         <span className="material-symbols-outlined text-xl text-white/90">terminal</span>
                      </div>
-                     <span className="font-mono text-xs border border-white/10 bg-white/5 px-2 py-1 rounded text-white/60">npm i @mossdapp/sdk</span>
+                     <span className="font-mono text-xs border border-white/10 bg-white/5 px-2 py-1 rounded text-white/60">npm i @1doapp/sdk</span>
                   </div>
                   <h3 className="text-3xl font-light tracking-tight mb-2">Developers</h3>
                </div>
@@ -287,21 +287,21 @@ export default function Home() {
                     Quick Start
                   </span>
                   <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[#1B0D15]">
-                    Moss Onboarding Tutorial
+                    1do Onboarding Tutorial
                   </h2>
                   <p className="mt-2 text-sm text-[#1B0D15]/65 max-w-3xl">
-                    Start from any EOA wallet, create your Moss Wallet (which is your OS account), then complete the app flow.
+                    Start from any EOA wallet, create your 1do wallet (which is your smart account), then complete the app flow.
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
                   <a
-                    href={LINKS.os}
+                    href={LINKS.app}
                     target="_blank"
                     rel="noreferrer"
                     className="px-4 py-2 rounded-full bg-[#1B0D15] text-white text-sm font-medium hover:opacity-90 transition-opacity"
                   >
-                    Open OS
+                    Open 1do
                   </a>
                   <a
                     href={LINKS.store}
@@ -368,23 +368,23 @@ export default function Home() {
                 <div className="lg:col-span-4 space-y-4">
                   <div className="bg-[linear-gradient(145deg,#120a0f,#22131c)] text-white rounded-[2rem] p-5 sm:p-6 border border-white/10 shadow-[0_30px_60px_-35px_rgba(0,0,0,0.6)]">
                     <h3 className="text-base font-semibold">App Types: System / App NFT / Standalone Platform</h3>
-                    <p className="mt-1 text-xs text-white/70">Runs on Ethereum Sepolia testnet. System and App NFT run in OS; Standalone is separate.</p>
+                    <p className="mt-1 text-xs text-white/70">Runs on Ethereum Sepolia testnet. System and App NFT run in Runtime; Standalone is separate.</p>
 
                     <div className="mt-4 space-y-3">
                       <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                         <p className="text-xs uppercase tracking-widest text-white/60">System App</p>
-                        <p className="mt-1 text-sm font-medium">Red Packet (OS)</p>
-                        <p className="mt-1 text-xs text-white/70">Available by default inside OS, no mint required.</p>
+                        <p className="mt-1 text-sm font-medium">Red Packet (Runtime)</p>
+                        <p className="mt-1 text-xs text-white/70">Available by default inside 1do, no mint required.</p>
                       </div>
                       <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                         <p className="text-xs uppercase tracking-widest text-white/60">App NFT</p>
-                        <p className="mt-1 text-sm font-medium">PeerDex (OS App)</p>
-                        <p className="mt-1 text-xs text-white/70">Mint in Store first, then it appears inside OS.</p>
+                        <p className="mt-1 text-sm font-medium">PeerDex (Wallet App)</p>
+                        <p className="mt-1 text-xs text-white/70">Mint in Store first, then it appears inside 1do.</p>
                       </div>
                       <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                         <p className="text-xs uppercase tracking-widest text-white/60">Standalone Platform</p>
                         <p className="mt-1 text-sm font-medium">PeerDex Standalone Trading Platform</p>
-                        <p className="mt-1 text-xs text-white/70">Separate from wallet-embedded OS apps.</p>
+                        <p className="mt-1 text-xs text-white/70">Separate from wallet-embedded wallet apps.</p>
                       </div>
                     </div>
                   </div>
@@ -412,12 +412,12 @@ export default function Home() {
         {/* FOOTER */}
         <footer className="mt-10 px-6 sm:px-10 border-t border-black/5 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 opacity-60">
            <div>
-              <p className="font-bold tracking-tight text-lg text-[#1B0D15]">moss</p>
-              <p className="text-xs mt-1">© {new Date().getFullYear()} MOSSDAPP. All rights reserved.</p>
+              <p className="font-bold tracking-tight text-lg text-[#1B0D15]">1do</p>
+              <p className="text-xs mt-1">© {new Date().getFullYear()} 1do. All rights reserved.</p>
            </div>
            <div className="flex gap-6 text-sm font-medium text-[#1B0D15]">
-              <a href="https://github.com/mossdapp" className="hover:text-black transition-colors">GitHub</a>
-              <a href="https://x.com/moss_dapp" className="hover:text-black transition-colors">Twitter</a>
+              <a href="https://github.com/1do" className="hover:text-black transition-colors">GitHub</a>
+              <a href="https://x.com/1do" className="hover:text-black transition-colors">Twitter</a>
            </div>
         </footer>
 
