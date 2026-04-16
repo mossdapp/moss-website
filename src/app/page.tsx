@@ -32,17 +32,17 @@ const BEGINNER_STEPS = [
     id: "01",
     icon: "account_balance_wallet",
     title: "Connect your wallet",
-    desc: "Use any EOA wallet to enter 1do. If your address has not activated 7702 yet, enable the 1do runtime first.",
-    links: [{ label: "Open 1do", href: LINKS.app }],
+    desc: "Use any EOA wallet to enter 1Do. If your address has not activated 7702 yet, enable the 1Do runtime first.",
+    links: [{ label: "Open 1Do", href: LINKS.app }],
   },
   {
     id: "02",
     icon: "local_gas_station",
     title: "Fund Gas and Claim Test Assets",
-    desc: "Fund your 1do wallet with Sepolia ETH, then claim USDC/USDT/1DO + NFT assets in 1do Faucet.",
+    desc: "Fund your 1Do wallet with Sepolia ETH, then claim USDC/USDT/1DO + NFT assets in 1Do Faucet.",
     links: [
       { label: "Sepolia Faucet", href: LINKS.sepoliaFaucet },
-      { label: "1do Faucet", href: LINKS.appFaucet },
+      { label: "1Do Faucet", href: LINKS.appFaucet },
     ],
   },
   {
@@ -59,7 +59,7 @@ const BEGINNER_STEPS = [
     id: "04",
     icon: "rocket_launch",
     title: "System vs App NFT vs Standalone",
-    desc: "Red Packet is ready in 1do. Wallet PeerDex needs App NFT mint. PeerDex Standalone is separate.",
+    desc: "Red Packet is ready in 1Do. Wallet PeerDex needs App NFT mint. PeerDex Standalone is separate.",
     links: [
       { label: "Red Packet (System APP)", href: LINKS.appRedPacket },
       { label: "Wallet PeerDex (App NFT)", href: LINKS.appPeerDex },
@@ -78,7 +78,7 @@ const STEP_ACCENTS = [
 const TROUBLESHOOTING = [
   {
     q: "7702 activation is not available",
-    a: "Reconnect your wallet and make sure your network is Sepolia before enabling the 1do runtime.",
+    a: "Reconnect your wallet and make sure your network is Sepolia before enabling the 1Do runtime.",
   },
   {
     q: "Faucet or Mint failed",
@@ -86,7 +86,7 @@ const TROUBLESHOOTING = [
   },
   {
     q: "PeerDex not visible after mint",
-    a: "Wait for confirmation and refresh 1do after 10-30 seconds.",
+    a: "Wait for confirmation and refresh 1Do after 10-30 seconds.",
   },
 ] as const;
 
@@ -103,8 +103,8 @@ export default function Home() {
       {/* 顶部导航 */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 sm:px-10 py-4 sm:py-5 pointer-events-none mix-blend-darken">
         <div className="pointer-events-auto flex items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-          <Image src="/onedo-icon.svg" alt="1do" width={28} height={28} className="shrink-0" />
-          <span className="font-bold tracking-tight text-xl">1do</span>
+          <Image src="/onedo-icon.svg" alt="1Do" width={28} height={28} className="shrink-0" />
+          <span className="font-bold tracking-tight text-xl">1Do</span>
         </div>
         
         <div className="pointer-events-auto hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-[#1B0D15]">
@@ -174,7 +174,7 @@ export default function Home() {
                     </div>
                     <div>
                        <span className="block text-xs font-mono uppercase tracking-widest opacity-40">Ecosystem</span>
-                       <span className="font-medium text-sm text-[#1B0D15]/70">1do Store</span>
+                       <span className="font-medium text-sm text-[#1B0D15]/70">1Do Store</span>
                     </div>
                  </div>
                  
@@ -212,7 +212,7 @@ export default function Home() {
                     </div>
                     <div>
                        <span className="block text-xs font-mono uppercase tracking-widest opacity-40">Infrastructure</span>
-                       <span className="font-medium text-sm text-[#1B0D15]/70">1do Account</span>
+                       <span className="font-medium text-sm text-[#1B0D15]/70">1Do Account</span>
                     </div>
                  </div>
                  
@@ -228,8 +228,8 @@ export default function Home() {
                  rel="noreferrer"
                  className="mt-6 inline-flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-2.5 rounded-full border border-white/50 hover:bg-white hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                >
-                 <Image src="/onedo-icon.svg" alt="1do" width={20} height={20} />
-                 <span className="text-sm font-medium text-[#1B0D15]">1do</span>
+                 <Image src="/onedo-icon.svg" alt="1Do" width={20} height={20} />
+                 <span className="text-sm font-medium text-[#1B0D15]">1Do</span>
                </a>
             </div>
 
@@ -287,10 +287,10 @@ export default function Home() {
                     Quick Start
                   </span>
                   <h2 className="mt-3 text-3xl sm:text-4xl font-semibold tracking-tight text-[#1B0D15]">
-                    1do Onboarding Tutorial
+                    1Do Onboarding Tutorial
                   </h2>
                   <p className="mt-2 text-sm text-[#1B0D15]/65 max-w-3xl">
-                    Start from any EOA wallet, create your 1do wallet (which is your smart account), then complete the app flow.
+                    Start from any EOA wallet, create your 1Do wallet (which is your smart account), then complete the app flow.
                   </p>
                 </div>
 
@@ -301,7 +301,7 @@ export default function Home() {
                     rel="noreferrer"
                     className="px-4 py-2 rounded-full bg-[#1B0D15] text-white text-sm font-medium hover:opacity-90 transition-opacity"
                   >
-                    Open 1do
+                    Open 1Do
                   </a>
                   <a
                     href={LINKS.store}
@@ -374,12 +374,12 @@ export default function Home() {
                       <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                         <p className="text-xs uppercase tracking-widest text-white/60">System App</p>
                         <p className="mt-1 text-sm font-medium">Red Packet (Runtime)</p>
-                        <p className="mt-1 text-xs text-white/70">Available by default inside 1do, no mint required.</p>
+                        <p className="mt-1 text-xs text-white/70">Available by default inside 1Do, no mint required.</p>
                       </div>
                       <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                         <p className="text-xs uppercase tracking-widest text-white/60">App NFT</p>
                         <p className="mt-1 text-sm font-medium">PeerDex (Wallet App)</p>
-                        <p className="mt-1 text-xs text-white/70">Mint in Store first, then it appears inside 1do.</p>
+                        <p className="mt-1 text-xs text-white/70">Mint in Store first, then it appears inside 1Do.</p>
                       </div>
                       <div className="rounded-2xl bg-white/10 border border-white/10 p-3">
                         <p className="text-xs uppercase tracking-widest text-white/60">Standalone Platform</p>
@@ -412,8 +412,8 @@ export default function Home() {
         {/* FOOTER */}
         <footer className="mt-10 px-6 sm:px-10 border-t border-black/5 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 opacity-60">
            <div>
-              <p className="font-bold tracking-tight text-lg text-[#1B0D15]">1do</p>
-              <p className="text-xs mt-1">© {new Date().getFullYear()} 1do. All rights reserved.</p>
+              <p className="font-bold tracking-tight text-lg text-[#1B0D15]">1Do</p>
+              <p className="text-xs mt-1">© {new Date().getFullYear()} 1Do. All rights reserved.</p>
            </div>
            <div className="flex gap-6 text-sm font-medium text-[#1B0D15]">
               <a href="https://github.com/1do" className="hover:text-black transition-colors">GitHub</a>

@@ -1,10 +1,10 @@
-# 1do Website (`1do-website`)
+# 1Do Website (`1do-website`)
 
-Official landing page for the 1do 1do Account ecosystem, linking to the 1do App, Store, and Labs.
+Official landing page for the 1Do 1Do Account ecosystem, linking to the 1Do App, Store, and Labs.
 
 ## Project Overview
 
-This is a **Next.js 16.1.1** application using **React 19** and **Tailwind CSS v4**. It serves as the static entry point for users to discover 1do, a Web3 account runtime centered around smart accounts (ERC-7204).
+This is a **Next.js 16.1.1** application using **React 19** and **Tailwind CSS v4**. It serves as the static entry point for users to discover 1Do, a Web3 account runtime centered around smart accounts (ERC-7204).
 
 The visual design mirrors `1do-core` (the main dApp), featuring a signature pink background, frosted glass effects, and Space Grotesk typography.
 
@@ -47,7 +47,7 @@ The project uses a specific design language defined in `src/app/globals.css`:
 
 ### Content Management
 - **Links:** External links (App, Store, Labs) are managed in the `LINKS` constant at the top of `src/app/page.tsx`.
-- **Text:** Content is static within `page.tsx`, designed to reflect the capabilities of the underlying 1do ecosystem (1do Account, deployments, SDK).
+- **Text:** Content is static within `page.tsx`, designed to reflect the capabilities of the underlying 1Do ecosystem (1Do Account, deployments, SDK).
 
 ## Important Files
 - `src/app/page.tsx`: Primary source of content and structure.
